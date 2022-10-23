@@ -1,0 +1,2 @@
+include ':mvn-sample'
+rootProject.name = "MVN Sample"
