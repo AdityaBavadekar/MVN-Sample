@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
+apply plugin: 'maven'
 apply plugin: 'signing'
+
 
 android {
     compileSdkVersion 31
@@ -28,8 +29,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.core:core-ktx:1.7.0'
 }
 
 
@@ -38,63 +38,65 @@ task androidSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
 }
 
-afterEvaluate {
-    publishing {
+uploadArchives {
+    repositories {
+        mavenDeployer {
 
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                //from components.release
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-                artifact(androidSourcesJar)
+            Properties p = new Properties()
+            p.load(file("../local.properties").newDataInputStream())
 
-                groupId = 'io.github.adityabavadekar'
-                artifactId = 'mvn-sample'
-                version = android.defaultConfig.versionName
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: p["ossrhUsername"], password: p["ossrhPassword"])
+            }
 
-                pom {
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: p["ossrhUsername"], password: p["ossrhPassword"])
+            }
 
-                    name = 'MVN Sample for Android Projects'
-                    description = 'A concise description of my MVN-Sample library is that it is just asample.'
-                    url = 'https://github.com/AdityaBavadekar/MVN-Sample'
-                    inceptionYear = '2022'
+            pom.project {
 
-                    licenses {
-                        license {
-                            name = 'The Apache License, Version 2.0'
-                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        }
-                    }
+                //artifact(androidSourcesJar)
+                //artifact("$buildDir/output/aar/mvn-sample.aar")
 
-                    developers {
-                        developer {
-                            id = 'AdityaBavadekar'
-                            name = 'Aditya Bavadekar'
-                            email = 'bvkraditya@gmail.com'
-                        }
-                    }
+                name p["LIBRARY_PUBLIC_NAME"]
+                packaging 'aar'
+                properties = [
+                        myProp: "value",
+                        "prop.with.dots": "anotherValue"
+                ]
+                groupId p["GROUP_ID"]
+                artifactId p["ARTIFACT_ID"]
+                description p["LIBRARY_PUBLIC_DESCRIPTION"]
+                url p["LIBRARY_GIT_URL"]
+                inceptionYear p["LIBRARY_INCEPTION_YEAR"]
 
-                    scm {
-                        connection = 'scm:git:git://github.com/mvn-sample.git'
-                        url = 'https://github.com/AdityaBavadekar/mvn-sample'
-                    }
-
+                scm {
+                    connection p["LIBRARY_SCM_CONNECTION"]
+                    url p["LIBRARY_SCM_URL"]
                 }
 
+                licenses {
+                    license {
+                        name p["LIBRARY_LICENCE_NAME"]
+                        url p["LIBRARY_LICENCE_URL"]
+                    }
+                }
+
+                developers {
+                    developer {
+                        id p["LIBRARY_DEVELOPER_ID"]
+                        name p["LIBRARY_DEVELOPER_NAME"]
+                        email p["LIBRARY_DEVELOPER_EMAIL"]
+                    }
+                }
             }
         }
-
-        repositories {
-            maven {
-                def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
-                def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
-                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-            }
-        }
-
     }
 }
 
-/*signing {
-    sign publishing.publications.release
-}*/
+signing {
+    sign configurations.archives
+}
+
