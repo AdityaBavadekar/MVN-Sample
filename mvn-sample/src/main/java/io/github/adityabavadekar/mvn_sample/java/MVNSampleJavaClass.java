@@ -1,9 +1,7 @@
 package io.github.adityabavadekar.mvn_sample.java;
 
 import android.util.Log;
-
-import com.adityaamolbavadekar.mvn_sample.BuildConfig;
-
+import io.github.adityaamolbavadekar.mvn_sample.BuildConfig;
 import io.github.adityabavadekar.mvn_sample.InstanceId;
 import io.github.adityabavadekar.mvn_sample.MVNSample;
 
