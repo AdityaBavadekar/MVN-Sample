@@ -1,6 +1,8 @@
 
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.adityabavadekar/mvn-sample)
 
+[View on Maven Central](https://repo.maven.apache.org/maven2/io/github/adityabavadekar/mvn-sample/)
+
 # MVN-Sample
 
 ## How to upload to Maven Central
