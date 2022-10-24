@@ -42,12 +42,14 @@ signing.password=PASSWORD
 signing.secretKeyRingFile=PATH_TO_KEYRING
 ```
 6. Use following commands:
-```bash
+```shell script
 >gpg --full-gen-key
 # Copy last-8-DIGITS as KeyId.
->gpg --export-secret-keys ${KeyId} > keyring.gpg
+>set keyId=PUT_YOUR_LAST_8_DIGITS
+>cd mvn-sample # Or your project dir or some other dir where you want to save keyring.gpg
+>gpg --export-secret-keys keyId > keyring.gpg
+>gpg --keyserver keyserver.ubuntu.com --send-keys keyId # Requires network.
 ```
-
 
 # Use this Library in your project
 - Gradle 
