@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="MVN_Sample_Theme_DayNight" parent="android:Theme.DeviceDefault.DayNight" tools:targetApi="q">
+        <item name="android:colorPrimary">@android:color/holo_green_light</item>
+    </style>
+
+</resources>
