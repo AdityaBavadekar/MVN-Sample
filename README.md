@@ -16,7 +16,7 @@
 # Location of the SDK. This is only used by Gradle.
 # For customization when using a Version Control System, please read the
 # header note.
-sdk.dir=C\:\\Sdk
+sdk.dir=_TODO_SDK_PATH
 
 ossrhUsername=_TODO_USERNAME
 ossrhPassword=_TODO_PASSWORD
