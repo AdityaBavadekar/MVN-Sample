@@ -57,14 +57,14 @@ signing.secretKeyRingFile=PATH_TO_KEYRING_FILE
 # Use this Library in your project
 - Gradle
 ```groovy
-    implementation 'io.github.adityabavadekar:mvn-sample:1.0'
+    implementation 'io.github.adityabavadekar:mvn-sample:1.1'
 ```
 - Maven
 ```xml
 <dependency>
   <groupId>io.github.adityabavadekar</groupId>
   <artifactId>mvn-sample</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <type>aar</type>
 </dependency>
 ```
