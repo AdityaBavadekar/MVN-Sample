@@ -1,7 +1,10 @@
+
+![Maven Central](https://img.shields.io/maven-central/v/io.github.adityabavadekar/mvn-sample)
+
 # MVN-Sample
 
 ## How to upload to Maven Central
-
+> Note : Below step are assumes you Jira New Project ticket and thus a groupId.
 1. Create your library project.
 2. Create your github project and sync your local project with it.
 3. Copy [build.gradle](/mvn-sample/build.gradle)
@@ -54,9 +57,21 @@ signing.password=PASSWORD
 signing.secretKeyRingFile=PATH_TO_KEYRING_FILE
 ```
 
+7. Now your artifact will be in staging repositories.
+8. Go to https://s01.oss.sonatype.org/ and login with your credentials.
+9. Navigate to https://s01.oss.sonatype.org/#stagingRepositories
+10. Your artifact must be listed their. Eg: `io.github.adityabavadekar-1010`
+11. Click on that artifact, select Activity and if everything worked their should be a green success message.
+12. In the top select Close. Wait till it completes.
+13. Then again select artifact and select Release. Wait for 10-15 min.
+14. **Congratulations 🎊  you artifact is published.**
+
+ Go to [here](https://repo.maven.apache.org/) and find you groupId.
+
+
 # Use this Library in your project
 
-- TAG  ![Maven Central](https://img.shields.io/maven-central/v/io.github.adityabavadekar/mvn-sample)
+ TAG :  ![Maven Central](https://img.shields.io/maven-central/v/io.github.adityabavadekar/mvn-sample)
 
 
 - Gradle
