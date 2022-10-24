@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adityaamolbavadekar.mvn_sample">
+    package="io.github.adityaamolbavadekar.mvn_sample">
 
     <application>
         <provider
