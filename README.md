@@ -55,16 +55,20 @@ signing.secretKeyRingFile=PATH_TO_KEYRING_FILE
 ```
 
 # Use this Library in your project
+
+- TAG  ![Maven Central](https://img.shields.io/maven-central/v/io.github.adityabavadekar/mvn-sample)
+
+
 - Gradle
 ```groovy
-    implementation 'io.github.adityabavadekar:mvn-sample:1.1'
+    implementation 'io.github.adityabavadekar:mvn-sample:TAG'
 ```
 - Maven
 ```xml
 <dependency>
   <groupId>io.github.adityabavadekar</groupId>
   <artifactId>mvn-sample</artifactId>
-  <version>1.1</version>
+  <version>TAG</version>
   <type>aar</type>
 </dependency>
 ```
