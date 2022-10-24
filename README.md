@@ -54,7 +54,7 @@ signing.secretKeyRingFile=PATH_TO_KEYRING
 <dependency>
   <groupId>io.github.adityabavadekar</groupId>
   <artifactId>mvn-sample</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1</version>
   <type>aar</type>
 </dependency>
 ```
