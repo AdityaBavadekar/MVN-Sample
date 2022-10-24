@@ -68,6 +68,7 @@ uploadArchives {
                 ]
                 groupId p["GROUP_ID"]
                 artifactId p["ARTIFACT_ID"]
+                version android.defaultConfig.versionName
                 description p["LIBRARY_PUBLIC_DESCRIPTION"]
                 url p["LIBRARY_GIT_URL"]
                 inceptionYear p["LIBRARY_INCEPTION_YEAR"]
