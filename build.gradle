@@ -4,6 +4,7 @@ buildscript {
         kotlin_version = "1.4.21"
         libVersionCode = 1
         libVersionName = "1.1"
+        libImplementationVersion = "1.1" //Show be the latest-published version
     }
     repositories {
         google()

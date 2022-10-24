@@ -28,5 +28,5 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'io.github.adityabavadekar:mvn-sample:1.1'
+    implementation "io.github.adityabavadekar:mvn-sample:$libImplementationVersion"
 }
