@@ -1,15 +1,18 @@
-package com.adityaamolbavadekar.mvn_sample.kotlin
+package io.github.adityabavadekar.mvn_sample.kotlin
 
 import android.util.Log
 import com.adityaamolbavadekar.mvn_sample.BuildConfig
-import com.adityaamolbavadekar.mvn_sample.InstanceId
+import io.github.adityabavadekar.mvn_sample.InstanceId
+import io.github.adityabavadekar.mvn_sample.MVNSample
 
-class MVNSampleKotlinClass private constructor(instanceId: InstanceId, version: String) {
+class MVNSampleKotlinClass private constructor(instanceId: InstanceId, version: String) :
+    MVNSample {
+
+    override fun sayHello(): String {
+        return "Hello"
+    }
+
     companion object {
-
-        fun sayHello(): String {
-            return "Hello"
-        }
 
         val instance: MVNSampleKotlinClass
             get() = MVNSampleKotlinClass(InstanceId.getInstance(), BuildConfig.VERSION_NAME)

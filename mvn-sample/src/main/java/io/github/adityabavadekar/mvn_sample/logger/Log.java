@@ -1,4 +1,4 @@
-package com.adityaamolbavadekar.mvn_sample.logger;
+package io.github.adityabavadekar.mvn_sample.logger;
 
 public class Log {
 

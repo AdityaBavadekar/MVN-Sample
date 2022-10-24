@@ -1,17 +1,19 @@
-package com.adityaamolbavadekar.mvn_sample.java;
+package io.github.adityabavadekar.mvn_sample.java;
 
 import android.util.Log;
 
 import com.adityaamolbavadekar.mvn_sample.BuildConfig;
-import com.adityaamolbavadekar.mvn_sample.InstanceId;
 
-public class MVNSampleJavaClass {
+import io.github.adityabavadekar.mvn_sample.InstanceId;
+import io.github.adityabavadekar.mvn_sample.MVNSample;
+
+public class MVNSampleJavaClass implements MVNSample {
 
     private MVNSampleJavaClass(InstanceId instanceId, String version) {
         Log.d(MVNSampleJavaClass_TAG, "Version[" + version + "] >> newInstance : " + instanceId.getId());
     }
 
-    public static String sayHello() {
+    public String sayHello() {
         return "Hello";
     }
 

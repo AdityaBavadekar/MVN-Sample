@@ -49,12 +49,19 @@ signing.secretKeyRingFile=PATH_TO_KEYRING
 ```
 
 
-# Library published
+# Use this Library in your project
+- Gradle 
+```groovy
+
+    implementation 'io.github.adityabavadekar:mvn-sample:1.0'
+
+```
+- Maven
 ```xml
 <dependency>
   <groupId>io.github.adityabavadekar</groupId>
   <artifactId>mvn-sample</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <type>aar</type>
 </dependency>
 ```

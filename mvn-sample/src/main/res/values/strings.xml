@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mvn_sample_library_name" translatable="false" formatted="false">MVN-Sample</string>
+</resources>

@@ -1,4 +1,4 @@
-package com.adityaamolbavadekar.mvn_sample;
+package io.github.adityabavadekar.mvn_sample;
 
 import java.util.UUID;
 
